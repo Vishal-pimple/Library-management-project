@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block 'main' %}
+
+<main id="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 my-5 mx-auto">
+                
+                <form method="POST" action="/abook">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="btid" class="form-label"> NAME:</label>
+                        <input type="text" name="bNAME" class="form-control" id="btid" placeholder="Enter Book Title">
+                    </div>
+                    <div class="mb-3">
+                        <label for="aid" class="form-label"> Author:</label>
+                        <input type="text" name="bAuthor" class="form-control" id="aid" placeholder="Author Name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="lid" class="form-label"> Language:</label>
+                        <input type="text" name="bLanguage" class="form-control" id="lid" placeholder="Language of book">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="bdtid" class="form-label">Description</label>
+                        <textarea name="bdet" class="form-control" id="bdtid" rows="10"></textarea>
+                    </div>
+
+                    <!-- <div class="mb-3">
+                        <select class="form-select" name="cat" aria-label="Default select example">
+                            <option>Select Category</option>
+                            <option value="1">Technical</option>
+                            <option value="2">Travel</option>
+                            <option value="3">Food</option>
+                        </select>
+                    </div> -->
+                    <div class="mb-3">
+                        <label for="brid" class="form-label"> Release_date:</label>
+                        <input type="text" name="bRelease_date" class="form-control" id="brid" placeholder="Enter Release_date">
+                    </div>
+
+                    <div class="mb-3">
+                        <button class="btn btn-danger" type="submit">ADD BOOK</button>
+                    </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</main>
+
+{% endblock 'main' %}
